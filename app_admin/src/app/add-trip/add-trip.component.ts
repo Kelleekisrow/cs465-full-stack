@@ -22,11 +22,9 @@ export class AddTripComponent implements OnInit {
     private router: Router,
     private tripService: TripDataService
   )  { }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+ 
 
-  ngOninit() {
+  ngOnInit() {
     this.addForm = this.formBuilder.group({
       _id: [],
       code: ['', Validators.required],
