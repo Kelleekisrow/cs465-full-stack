@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
+
+
 
 
 const userSchema = new mongoose.Schema({
@@ -17,6 +18,7 @@ const userSchema = new mongoose.Schema({
     hash: String,
     salt: String,
 });
+mongoose.model('users', userSchema);
 
 
 userSchema.methods.setPassword = function(password){
@@ -42,3 +44,4 @@ userSchema.methods.generateJWT = function() {
 };
 const User = mongoose.model('users', userSchema);
 module.exports = User;
+

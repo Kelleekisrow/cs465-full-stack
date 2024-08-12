@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('../models/user');
-const passport = require('passport');
+const passport = require('../config/passport');
 
 const register = async(req, res) => {
     if (!req.body.name || !req.body.email || !req.body.password) {
@@ -9,14 +9,12 @@ const register = async(req, res) => {
             .json({"message": "All fields required"});
     }
 
-    const user = new User(
-        {
-            name: req.body.name,
-            email: req.body.email,
-            password: ''
-        });
-
-    user.setPassword(req.body.password)
+    const user = new User({
+        name: req.body.name,
+        email: req.body.email,
+        password: ''
+    });
+    user.setPassword(req.body.password);
     const q = await user.save();
 
     if(!q) {

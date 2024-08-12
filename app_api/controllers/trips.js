@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Model = mongoose.model('trips');
+const User = mongoose.model('users');
 const Trip = require('../models/travlr');
 
 

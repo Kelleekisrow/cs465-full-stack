@@ -1,13 +1,14 @@
-const passport = require('passport');
+const passport = require('../config/passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const mongoose = require('mongoose');
-const User = mongoose.model('users');
+const User = require('../models/user');
+const Trip = require('../models/travlr');
 
 
 passport.use(new LocalStrategy(
     {
-        usernameField: 'email'
+        usernameField: 'email',
     },
     async (username, password, done) => {
         const q = await User 
