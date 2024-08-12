@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-const Trip = require('../models/travlr');
 const Model = mongoose.model('trips');
+const Trip = require('../models/travlr');
+
 
 const tripsList = async(req, res) => {
     const q = await Model
