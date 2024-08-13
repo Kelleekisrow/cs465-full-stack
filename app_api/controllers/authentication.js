@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('../models/user');
-const passport = require('../config/passport');
+const passport = require('passport');
 
 const register = async(req, res) => {
     if (!req.body.name || !req.body.email || !req.body.password) {
@@ -12,7 +12,7 @@ const register = async(req, res) => {
     const user = new User({
         name: req.body.name,
         email: req.body.email,
-        password: ''
+        password: ' '
     });
     user.setPassword(req.body.password);
     const q = await user.save();

@@ -17,6 +17,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.1",
     "morgan": "~1.9.1",
+    "node.js": "^0.0.1-security",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0"
   }
